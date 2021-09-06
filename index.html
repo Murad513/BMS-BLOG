@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMS Group LLC</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="animate.css">
+<link rel="icon" href="tablogo.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+      </script>
+  <script type="text/javascript">
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    $(document).ready(function(){
+    
+      $('.element').each(function() {
+        $(this).mouseover(function() {
+            $(this).addClass('active');
+          $('.stage').children('.element').not('.active').addClass('inactive');
+        });
+        $(this).mouseleave(function() {
+            $(this).removeClass('active');
+            $('.stage').children('.element').not('.active').removeClass('inactive');
+        });
+    });
+
+
+        (function() {
+  $(document).ready(function() {
+    var walkthrough;
+    walkthrough = {
+      index: 0,
+      nextScreen: function() {
+        if (this.index < this.indexMax()) {
+          this.index++;
+          return this.updateScreen();
+        }
+      },
+      prevScreen: function() {
+        if (this.index > 0) {
+          this.index--;
+          return this.updateScreen();
+        }
+      },
+      updateScreen: function() {
+        this.reset();
+        this.goTo(this.index);
+        return this.setBtns();
+      },
+      setBtns: function() {
+        var $lastBtn, $nextBtn, $prevBtn;
+        $nextBtn = $('.next-screen');
+        $prevBtn = $('.prev-screen');
+        $lastBtn = $('.finish');
+        if (walkthrough.index === walkthrough.indexMax()) {
+          $nextBtn.prop('disabled', true);
+          $prevBtn.prop('disabled', false);
+          return $lastBtn.addClass('active').prop('disabled', false);
+        } else if (walkthrough.index === 0) {
+          $nextBtn.prop('disabled', false);
+          $prevBtn.prop('disabled', true);
+          return $lastBtn.removeClass('active').prop('disabled', true);
+        } else {
+          $nextBtn.prop('disabled', false);
+          $prevBtn.prop('disabled', false);
+          return $lastBtn.removeClass('active').prop('disabled', true);
+        }
+      },
+      goTo: function(index) {
+        $('.screen').eq(index).addClass('active');
+        return $('.dot').eq(index).addClass('active');
+      },
+      reset: function() {
+        return $('.screen, .dot').removeClass('active');
+      },
+      indexMax: function() {
+        return $('.screen').length - 1;
+      },
+      closeModal: function() {
+        $('.walkthrough, .shade').removeClass('reveal');
+        return setTimeout(((function(_this) {
+          return function() {
+            $('.walkthrough, .shade').removeClass('show');
+            _this.index = 0;
+            return _this.updateScreen();
+          };
+        })(this)), 200);
+      },
+      openModal: function() {
+        $('.walkthrough, .shade').addClass('show');
+        setTimeout(((function(_this) {
+          return function() {
+            return $('.walkthrough, .shade').addClass('reveal');
+          };
+        })(this)), 200);
+        return this.updateScreen();
+      }
+    };
+    $('.next-screen').click(function() {
+      return walkthrough.nextScreen();
+    });
+    $('.prev-screen').click(function() {
+      return walkthrough.prevScreen();
+    });
+    $('.close').click(function() {
+      return walkthrough.closeModal();
+    });
+    $('.open-walkthrough').click(function() {
+      return walkthrough.openModal();
+    });
+    walkthrough.openModal();
+    return $(document).keydown(function(e) {
+      switch (e.which) {
+        case 37:
+          walkthrough.prevScreen();
+          break;
+        case 38:
+          walkthrough.openModal();
+          break;
+        case 39:
+          walkthrough.nextScreen();
+          break;
+        case 40:
+          walkthrough.closeModal();
+          break;
+        default:
+          return;
+      }
+      e.preventDefault();
+    });
+  });
+
+}).call(this);
+
+
+});
+  </script>
+
+</head>
+<body>
+
+<header class="top">
+  <a href="file:///C:/Users/DEVELENT/Desktop/BMS/index.html"><img src="bmslogo.png" class="logo"></a>
+  <div class="wow fadeInDown topnav" id="myTopnav">
+     <div class="dropdown">
+    <button class="dropbtn">Specialized Structures
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SS/ss.html">Electrical</a>
+      <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SSM/ssm.html">Mechanical</a>
+    </div>
+  </div> 
+
+    <a class="dropbtn" href="file:///C:/Users/DEVELENT/Desktop/BMS/References/ref.html">References</a>
+ <a href="file:///C:/Users/DEVELENT/Desktop/BMS/Service/service.html" class="dropbtn">Service</a>
+ <a href="file:///C:/Users/DEVELENT/Desktop/BMS/AboutUs/about.html" class="dropbtn">About Us</a>
+  
+      
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<div class="row">
+  <div class="column column1">
+    <div class="textch">
+  <div class="banner">
+    <div class="text-wrapper">
+      <h1 class="box b1"></h1>
+    </div>
+  </div>
+</div>
+    <div class="btnlr">
+    <a href="file:///C:/Users/DEVELENT/Desktop/BMS/AboutUs/about.html" class="lrbtn">Learn more</a>
+  </div>
+  </div>
+  <div class="column column2">
+    <div class="imghilt">
+      <div class="pics">
+        <img class="hilton" src="hilton.png"></img>
+      </div>
+      <div class="links">
+            <div class="rows">
+  <div class="columns column1s">
+    <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SS/ss.html" class="eleceng"><img src="elico.png" class="ico"><br>ELECTRICAL<br>ENGINEERING</a>
+  </div>
+  <div class="columns column2s">
+    <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SSM/ssm.html" class="mecheng"><img  src="geico.png" class="ico"><br>MECHANICAL<br>ENGINEERING</a>
+  </div>
+  <div class="columns column3s">
+    <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SSM/ssm.html" class="mecheng"><img  src="manco.png" class="ico"><br>Consultation<br>•</a>
+  </div>
+  <div class="columns column4s">
+    <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SSM/ssm.html" class="mecheng"><img  src="proco.png" class="ico"><br>Projection<br>•</a>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</header>
+
+<section class="afterslide">
+  <div class="bmstx">
+    <h1 class="txt">BMS GROUP LLC</h1>
+    <p class="txtp">BMS is a design and installation center that provides a full range of activities for the design, delivery and professional installation of equipment, as well as warranty and post-warranty service, using modern systems in the intelligent management of buildings. The company’s staff consists of experienced engineers and programmers who have been certified in specialized training centers.</p>
+  </div>
+</section>
+
+
+  <section class="sliderpic">
+    <div class="wrapper">
+<div class="slideshows">
+  <div class="slideshow slideshow--hero">
+    <div class="slides">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+      <div class="slide slide4"></div>
+    </div>
+  </div>
+  <div class="slideshow slideshow--contrast slideshow--contrast--before">
+    <div class="slides">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+      <div class="slide slide4"></div>
+    </div>
+  </div>
+  <div class="slideshow slideshow--contrast slideshow--contrast--after">
+    <div class="slides">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+      <div class="slide slide4"></div>
+    </div>
+  </div>
+</div>
+  </div>
+  </section>
+
+
+<section class="slideafter">
+  <div class="rowafter">
+  <div class="columnafter column1after">
+    <a href="file:///C:/Users/DEVELENT/Desktop/BMS/AboutUs/about.html"><img src="noqte.png" class="ico"><br>Get More<br>Information<br>About Us</a>
+  </div>
+
+</div>
+</section>
+
+<section class="refs">
+
+  <h1 class="refstxt">References</h1>
+
+  <section class="pen">
+    <div class="stage">
+      <div class="element michael"></div>
+      <div class="element franklin"></div>
+      <div class="element trevor"></div>
+    </div>
+  </section>
+<div class="refb">
+  <a class="refbtn" href="file:///C:/Users/DEVELENT/Desktop/BMS/References/ref.html">More</a>
+</div>
+</section>
+
+
+<section class="mslide">
+<div class="walkthrough show reveal">
+  <div class="walkthrough-pagination">
+    <a class="dot active"></a>
+    <a class="dot"></a>
+    <a class="dot"></a>
+    <a class="dot"></a>
+  </div>
+  <div class="walkthrough-body">
+    <ul class="screens animate">
+      <li class="screen">
+        <div class="media comm">
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/comm_icon_1.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/comm_icon_2.png"/>
+        </div>
+        <h3>
+          Contacts
+          <br/>
+        </h3>
+        <p>Aga Nematulla,79,Baku,Narimanov district<br>Baku,Azerbaijan,AZ1075<br>+994 50 253 07 77<br>info@tis.az</p>
+      </li>
+      <li class="screen">
+        <div class="media books">
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/book_icon_1.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/book_icon_2.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/book_icon_3.png"/>
+        </div>
+        <h3>
+          Experience of years
+          <br/>
+        </h3>
+        <p>More than 100 completed projects with high quality</p>
+      </li>
+      <li class="screen">
+        <div class="media bars">
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/bar_icon_axis.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/bar_icon_3.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/bar_icon_2.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/bar_icon_1.png"/>
+        </div>
+        <h3>
+          Progress
+          <br/>
+        </h3>
+        <p>We are getting better and better every day by implementing projects</p>
+      </li>
+      <li class="screen">
+        <div class="media files">
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/file_icon_1.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/file_icon_2.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/file_icon_3.png"/>
+          <img class="icon" src="https://s3.amazonaws.com/jebbles-codepen/file_icon_4.png"/>
+        </div>
+        <h3>
+          Professional Stuff
+          <br/>
+        </h3>
+        <p>Our team - experts in their field with extensive experience</p>
+      </li>
+    </ul>
+    <button class="prev-screen">
+      <i class="icon-angle-left"></i>
+    </button>
+    <button class="next-screen">
+      <i class="icon-angle-right"></i>
+    </button>
+  </div>
+</div>
+
+
+</section>
+
+
+<footer>
+  <p class="copyr">© Copyright 2021 | BMS GROUP LLC</p>
+  <a href="#" class="prod">MA Prod</a>
+</footer>

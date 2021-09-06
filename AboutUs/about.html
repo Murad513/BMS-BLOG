@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="astyle.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="animate.css">
+<link rel="icon" href="tablogo.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+      </script>
+  <script type="text/javascript">
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    $(document).ready(function(){
+    
+      $('.element').each(function() {
+        $(this).mouseover(function() {
+            $(this).addClass('active');
+          $('.stage').children('.element').not('.active').addClass('inactive');
+        });
+        $(this).mouseleave(function() {
+            $(this).removeClass('active');
+            $('.stage').children('.element').not('.active').removeClass('inactive');
+        });
+    });
+
+
+        (function() {
+  $(document).ready(function() {
+    var walkthrough;
+    walkthrough = {
+      index: 0,
+      nextScreen: function() {
+        if (this.index < this.indexMax()) {
+          this.index++;
+          return this.updateScreen();
+        }
+      },
+      prevScreen: function() {
+        if (this.index > 0) {
+          this.index--;
+          return this.updateScreen();
+        }
+      },
+      updateScreen: function() {
+        this.reset();
+        this.goTo(this.index);
+        return this.setBtns();
+      },
+      setBtns: function() {
+        var $lastBtn, $nextBtn, $prevBtn;
+        $nextBtn = $('.next-screen');
+        $prevBtn = $('.prev-screen');
+        $lastBtn = $('.finish');
+        if (walkthrough.index === walkthrough.indexMax()) {
+          $nextBtn.prop('disabled', true);
+          $prevBtn.prop('disabled', false);
+          return $lastBtn.addClass('active').prop('disabled', false);
+        } else if (walkthrough.index === 0) {
+          $nextBtn.prop('disabled', false);
+          $prevBtn.prop('disabled', true);
+          return $lastBtn.removeClass('active').prop('disabled', true);
+        } else {
+          $nextBtn.prop('disabled', false);
+          $prevBtn.prop('disabled', false);
+          return $lastBtn.removeClass('active').prop('disabled', true);
+        }
+      },
+      goTo: function(index) {
+        $('.screen').eq(index).addClass('active');
+        return $('.dot').eq(index).addClass('active');
+      },
+      reset: function() {
+        return $('.screen, .dot').removeClass('active');
+      },
+      indexMax: function() {
+        return $('.screen').length - 1;
+      },
+      closeModal: function() {
+        $('.walkthrough, .shade').removeClass('reveal');
+        return setTimeout(((function(_this) {
+          return function() {
+            $('.walkthrough, .shade').removeClass('show');
+            _this.index = 0;
+            return _this.updateScreen();
+          };
+        })(this)), 200);
+      },
+      openModal: function() {
+        $('.walkthrough, .shade').addClass('show');
+        setTimeout(((function(_this) {
+          return function() {
+            return $('.walkthrough, .shade').addClass('reveal');
+          };
+        })(this)), 200);
+        return this.updateScreen();
+      }
+    };
+    $('.next-screen').click(function() {
+      return walkthrough.nextScreen();
+    });
+    $('.prev-screen').click(function() {
+      return walkthrough.prevScreen();
+    });
+    $('.close').click(function() {
+      return walkthrough.closeModal();
+    });
+    $('.open-walkthrough').click(function() {
+      return walkthrough.openModal();
+    });
+    walkthrough.openModal();
+    return $(document).keydown(function(e) {
+      switch (e.which) {
+        case 37:
+          walkthrough.prevScreen();
+          break;
+        case 38:
+          walkthrough.openModal();
+          break;
+        case 39:
+          walkthrough.nextScreen();
+          break;
+        case 40:
+          walkthrough.closeModal();
+          break;
+        default:
+          return;
+      }
+      e.preventDefault();
+    });
+  });
+
+}).call(this);
+
+
+});
+  </script>
+
+</head>
+<body>
+
+<header class="top">
+  <a href="file:///C:/Users/DEVELENT/Desktop/BMS/index.html"><img src="bmslogo.png" class="logo"></a>
+  <div class="wow fadeInDown topnav" id="myTopnav">
+     <div class="dropdown">
+    <button class="dropbtn">Specialized Structures
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SS/ss.html">Electrical</a>
+      <a href="file:///C:/Users/DEVELENT/Desktop/BMS/SSM/ssm.html">Mechanical</a>
+    </div>
+  </div> 
+  <a href="file:///C:/Users/DEVELENT/Desktop/BMS/AboutUs/about.html" class="dropbtn">About Us</a>
+  <a class="dropbtn" href="file:///C:/Users/DEVELENT/Desktop/BMS/References/ref.html">References</a>
+ <a href="file:///C:/Users/DEVELENT/Desktop/BMS/Service/service.html" class="dropbtn">Service</a>
+  
+      
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div class="ab">
+<h1 class="abh1">About Us</h1>
+<p class="abtxt">Established 2014.BMS is a design and installation center that provides a full range of activities for the design, delivery and professional installation of equipment, as well as warranty and post-warranty service, using modern systems in the intelligent management of buildings. The company’s staff consists of experienced engineers and programmers who have been certified in specialized training centers.
+
+For the implementation of projects, we use equipment and technologies that are certified and meet international quality standarts. Large government organizations and private enterprises, foreign companies, as well as individual turn to us to solve certain technical difficulties and issues. Usually these issues are related to automation systems, software and hardware security systems, network problems.
+</p>
+</div>
+
+
+</header>
+
+
+
+<footer>
+  <p class="copyr">© Copyright 2021 | BMS GROUP LLC</p>
+  <a href="#" class="prod">MA Prod</a>
+</footer>
